@@ -1,0 +1,12 @@
+{
+	"name": "books-front",
+	"version": "1.0.0",
+	"description": "Client side for books application",
+	"main": "index.js",
+	"repository": "git@github.com:AlexPurhalo/books-front.git",
+	"scripts": {},
+	"author": "Alex Purhalo",
+	"license": "",
+	"devDependencies": "",
+	"dependencies": ""
+}
