@@ -1,0 +1,16 @@
+.book-section {
+	margin: 0 1rem 3rem;
+	display: inline-block;
+	.book-title {
+		font-size: 1.4rem;
+	}
+
+	.book-authors {
+		list-style: none;
+		.book-author {
+			.book-author-name {
+				font-size: 1rem;
+			}
+		}
+	}
+}

@@ -22,18 +22,20 @@ export default class BooksList extends Component {
 		console.log(this.booksList);
 		return (
 			<div className="books-section">
-				<h1>Books List</h1>
-				<ul className="books-list">
-					{
-						this.booksList.map(book =>
-							<SingleBook
-								key={book.id}
-								id={book.id}
-								title={book.title}
-								authors={book.authors} />
-						)
-					}
-				</ul>
+				<h1 className="books-title">Books List</h1>
+				<div className="row">
+					<ul className="books-list">
+						{
+							this.booksList.map(book =>
+								<SingleBook
+									key={book.id}
+									id={book.id}
+									title={book.title}
+									authors={book.authors} />
+							)
+						}
+					</ul>
+				</div>
 			</div>
 		);
 	}

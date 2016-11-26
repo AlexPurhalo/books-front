@@ -5,18 +5,20 @@ import React, { Component } from 'react';
 export default class SingleBook extends Component {
 	render() {
 		return (
-			<li className="book">
-				<h2 className="title">{this.props.title}</h2>
-				<ul className="book-authors">
-					{
-						this.props.authors.map(author =>
-							<li className="book-author" key={author.id}>
-								<h3>{author.name}</h3>
-							</li>
-						)
-					}
-				</ul>
-			</li>
+			<div className="col-md-3">
+				<li className="book-section">
+					<h2 className="book-title">{this.props.title}</h2>
+					<div className="book-authors">
+						{
+							this.props.authors.map(author =>
+								<ul className="book-author" key={author.id}>
+									<h3 className="book-author-name">{author.name}</h3>
+								</ul>
+							)
+						}
+					</div>
+				</li>
+			</div>
 		);
 	}
 }
