@@ -10,15 +10,14 @@ const ROOT_URL = 'https://books-back.herokuapp.com/';
 // Receives users list
 export function fetchBooks() {
 	return function(dispatch) {
-		return axios.get(`${ROOT_URL}/authors`)
+		return axios.get(`${ROOT_URL}/books`)
 			.then(res => dispatch(fetchAuthorSuccess(res.data)))
 			.catch(req => dispatch(fetchAuthorFailure(req.response.data.errors)));
 	}
 }
 
 function fetchAuthorSuccess(data) {
-	console.log('works!');
-	console.log(data);
+	// console.log(`books from action: ${data}`);
 	return {
 		type: FETCH_BOOKS_SUCCESS,
 		payload: data

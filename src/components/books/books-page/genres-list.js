@@ -13,7 +13,6 @@ export default class GenresList extends Component {
 	];
 
 	render() {
-		console.log(this.genresList);
 		return (
 			<div className="genres-section">
 				<h1 className="genres-title">Genres List</h1>

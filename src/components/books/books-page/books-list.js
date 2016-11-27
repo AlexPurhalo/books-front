@@ -5,46 +5,40 @@ import { connect } from 'react-redux';
 // Components import
 import SingleBook from './single-book';
 
-// Actions import
-import { fetchBooks } from '../../../actions/books';
+
 
 // Shows the books list
 class BooksList extends Component {
-	componentWillMount() {
-		this.props.fetchBooks();
+	renderBooksList(books) {
+		return (
+			<ul className="books-list">
+				{
+					books.map( book =>
+						<SingleBook
+							key={book.id}
+							title={book.title}
+							authors={book.authors} />
+					)
+				}
+			</ul>
+		);
 	}
-	booksList = [
-		{ id: 1, title: 'The Hobbit', authors: [{ id: 1, name: 'J.R.R. Tolkien' }]},
-		{ id: 2, title: 'Lord of the Rings', authors: [{ id: 1, name: 'J.R.R. Tolkien' }]},
-		{ id: 3, title: 'The Stand', authors: [{ id: 2, name: 'Stephen King' }]},
-		{ id: 4, title: 'Red Dragon', authors: [{ id: 3, name: 'Thomas Harris' }]},
-		{ id: 5, title: 'Blood Meridian', authors: [{ id: 4, name: 'Cormac McCarthy' }]},
-		{ id: 6, title: 'The Stand', authors: [{ id: 5, name: 'Stephen King' }]},
-		{ id: 7, title: 'Ruby Science', authors: [
-			{ id: 6, name: 'Thoughtbot' }, { id: 7, name: 'Harlow Ward' }, { id: 8, name: 'Joe Ferris' }
-		]}
-	];
+
+	renderEmptyMessage() {
+		return <div>Data processing...</div>;
+	}
 
 	render() {
+		// console.log(`books list from child BooksList component ${this.props.books}`);
 		return (
 			<div className="books-section">
 				<h1 className="books-title">Books List</h1>
 				<div className="row">
-					<ul className="books-list">
-						{
-							this.booksList.map(book =>
-								<SingleBook
-									key={book.id}
-									id={book.id}
-									title={book.title}
-									authors={book.authors} />
-							)
-						}
-					</ul>
+					{ this.props.books.length > 0 ? this.renderBooksList(this.props.books) : this.renderEmptyMessage() }
 				</div>
 			</div>
 		);
 	}
 }
 
-export default connect(null, { fetchBooks })(BooksList)
+export default connect(null)(BooksList)
