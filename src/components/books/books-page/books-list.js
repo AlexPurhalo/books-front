@@ -1,11 +1,18 @@
 // Node modules import
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 // Components import
 import SingleBook from './single-book';
 
+// Actions import
+import { fetchBooks } from '../../../actions/books';
+
 // Shows the books list
-export default class BooksList extends Component {
+class BooksList extends Component {
+	componentWillMount() {
+		this.props.fetchBooks();
+	}
 	booksList = [
 		{ id: 1, title: 'The Hobbit', authors: [{ id: 1, name: 'J.R.R. Tolkien' }]},
 		{ id: 2, title: 'Lord of the Rings', authors: [{ id: 1, name: 'J.R.R. Tolkien' }]},
@@ -19,7 +26,6 @@ export default class BooksList extends Component {
 	];
 
 	render() {
-		console.log(this.booksList);
 		return (
 			<div className="books-section">
 				<h1 className="books-title">Books List</h1>
@@ -40,3 +46,5 @@ export default class BooksList extends Component {
 		);
 	}
 }
+
+export default connect(null, { fetchBooks })(BooksList)
