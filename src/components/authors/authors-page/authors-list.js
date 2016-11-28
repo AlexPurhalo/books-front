@@ -8,7 +8,7 @@ import SingleAuthor from './single-author';
 export default class AuthorsList extends Component {
 	renderAuthorsList(authors) {
 		return (
-			<ul className="authors-list">
+			<div className="authors-list row">
 				{
 					authors.map( author =>
 						<SingleAuthor
@@ -17,7 +17,7 @@ export default class AuthorsList extends Component {
 							books={author.books} />
 					)
 				}
-			</ul>
+			</div>
 		)
 	}
 

@@ -4,3 +4,10 @@
 ul {
 	padding: 0 0;
 }
+
+.non-styled-btn {
+	border: 0;
+	background: transparent;
+}
+
+button:focus { outline:0 !important; }

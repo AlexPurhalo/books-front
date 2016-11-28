@@ -1,1 +1,23 @@
-.single-author {}
+.single-author {
+	margin: 1rem 0;
+	.author-name {
+		font-size: 1.5rem;
+		letter-spacing: 3px;
+	}
+
+	.open-book-switch {
+		.show-books-btn {
+			color: #bdbde8;
+		}
+	}
+
+	.opened-books-list-section {
+		.single-author-books-list {
+			list-style: none;
+			.single-author-book {}
+		}
+		.hide-books-btn {
+			color: rgba(255, 0, 0, 0.52);
+		}
+	}
+}
