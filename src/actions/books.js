@@ -8,9 +8,11 @@ import { FETCH_BOOKS_SUCCESS, FETCH_BOOKS_FAILURE, FETCH_BOOK_SUCCESS, FETCH_BOO
 const ROOT_URL = 'https://books-back.herokuapp.com/';
 
 // Receives books list
-export function fetchBooks() {
+export function fetchBooks(genre) {
 	return function(dispatch) {
-		return axios.get(`${ROOT_URL}/books`)
+		let paramGenre = '';
+		if (genre) paramGenre = `?genre=${genre}`;
+		return axios.get(`${ROOT_URL}/books${paramGenre}`)
 			.then(res => dispatch(fetchBooksSuccess(res.data)))
 			.catch(req => dispatch(fetchBooksFailure(req.response.data.errors)));
 	}

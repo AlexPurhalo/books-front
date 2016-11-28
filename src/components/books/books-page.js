@@ -22,7 +22,7 @@ class BooksPage extends Component {
 		// console.log(`genres list from parent component: ${this.props.genresList}`);
 		return (
 			<div className="books-page">
-				<GenresList genres={this.props.genresList} />
+				<GenresList genres={this.props.genresList} fetchBookByGenre={this.props.fetchBooks}/>
 				<BooksList books={this.props.booksList} />
 			</div>
 		);
