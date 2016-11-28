@@ -8,10 +8,12 @@ import BooksList from './books-page/books-list';
 
 // Actions import
 import { fetchBooks } from '../../actions/books';
+import { fetchGenres } from '../../actions/genres';
 
 // Shows books page
 class BooksPage extends Component {
 	componentWillMount() {
+		this.props.fetchGenres();
 		this.props.fetchBooks();
 	}
 
@@ -30,4 +32,4 @@ function mapStateToProps(state) {
 	return { booksList: state.books.booksList }
 }
 
-export default connect(mapStateToProps, { fetchBooks })(BooksPage);
+export default connect(mapStateToProps, { fetchBooks, fetchGenres })(BooksPage);
