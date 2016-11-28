@@ -8,6 +8,7 @@ export default class SingleBook extends Component {
 			<div className="col-md-3">
 				<li className="book-section">
 					<h2 className="book-title">{this.props.title}</h2>
+					<img src={this.props.cover} alt="cover" width="214px" height="272"/>
 					<div className="book-authors">
 						{
 							this.props.authors.map(author =>

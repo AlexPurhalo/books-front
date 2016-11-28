@@ -17,7 +17,8 @@ class BooksList extends Component {
 						<SingleBook
 							key={book.id}
 							title={book.title}
-							authors={book.authors} />
+							authors={book.authors}
+							cover={book.cover} />
 					)
 				}
 			</ul>
