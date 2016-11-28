@@ -17,7 +17,7 @@ export function fetchGenres() {
 }
 
 function fetchGenresListSuccess(data) {
-	console.log(`genres from action: ${data}`);
+	// console.log(`genres from action: ${data}`);
 	return {
 		type: FETCH_GENRES_SUCCESS,
 		payload: data
