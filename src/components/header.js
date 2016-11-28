@@ -16,7 +16,7 @@ export default class Header extends Component {
 			</li>,
 			<li className="nav-item" key={2}>
 				<Link
-					to="authors"
+					to="/authors"
 					className="nav-link"
 					activeClassName="active">
 					Authors

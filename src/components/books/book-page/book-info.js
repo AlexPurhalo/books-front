@@ -1,5 +1,6 @@
 // Node modules import
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 // Shows information about book
 export default class BookInfo extends Component {
@@ -18,7 +19,11 @@ export default class BookInfo extends Component {
 							<div className="col-md-6">
 								<ul className="book-authors">
 									{book.authors.map(author =>
-										<li className='book-author' key={author.id}><h3 className="book-author-name">{author.name}</h3></li>
+										<li className='book-author' key={author.id}>
+											<Link to={`/authors/${author.id}`}>
+												<h3 className="book-author-name">{author.name}</h3>
+											</Link>
+										</li>
 									)}
 								</ul>
 							</div>

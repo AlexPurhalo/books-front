@@ -13,6 +13,7 @@ export default class AuthorsList extends Component {
 					authors.map( author =>
 						<SingleAuthor
 							key={author.id}
+							id={author.id}
 							name={author.name}
 							books={author.books} />
 					)

@@ -14,7 +14,11 @@
 	.opened-books-list-section {
 		.single-author-books-list {
 			list-style: none;
-			.single-author-book {}
+			.single-author-book {
+				.book-title {
+					font-size: 1rem;
+				}
+			}
 		}
 		.hide-books-btn {
 			color: rgba(255, 0, 0, 0.52);

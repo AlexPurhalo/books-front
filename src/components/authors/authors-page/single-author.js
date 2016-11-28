@@ -1,5 +1,6 @@
 // Node modules import
 import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 // Shows data about single author
 export default class SingleAuthor extends Component {
@@ -21,7 +22,7 @@ export default class SingleAuthor extends Component {
 						<li
 							className='single-author-book'
 							key={book.id}>
-							{book.title}
+							<Link to={`/books/${book.id}`}><h3 className="book-title">{book.title}</h3></Link>
 						</li>
 					)}
 					<li>
@@ -51,7 +52,9 @@ export default class SingleAuthor extends Component {
 	render() {
 		return (
 			<div className="single-author col-md-12">
-				<h2 className="author-name">{this.props.name}</h2>
+				<Link to={`authors/${this.props.id}`}>
+					<h2 className="author-name">{this.props.name}</h2>
+				</Link>
 				{this.state.onShowBooks ? this.showAuthorBooks(this.props.books) : this.showOpenBooksSwitch() }
 			</div>
 		);

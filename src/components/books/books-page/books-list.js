@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 // Components import
 import SingleBook from './single-book';
 
-
-
 // Shows the books list
 class BooksList extends Component {
 	renderBooksList(books) {
@@ -16,6 +14,7 @@ class BooksList extends Component {
 					books.map( book =>
 						<SingleBook
 							key={book.id}
+							id={book.id}
 							title={book.title}
 							authors={book.authors}
 							cover={book.cover} />
