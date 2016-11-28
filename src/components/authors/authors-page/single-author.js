@@ -6,7 +6,16 @@ export default class SingleAuthor extends Component {
 	render() {
 		return (
 			<li className="single-author">
-				Single Author
+				{this.props.name}
+				<ul className="single-author-books-list">
+					{ this.props.books.map(book =>
+						<li
+							className='single-author-book'
+							key={book.id}>
+							{book.title}
+						</li>
+					)}
+				</ul>
 			</li>
 		);
 	}

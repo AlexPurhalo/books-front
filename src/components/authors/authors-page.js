@@ -18,7 +18,8 @@ class AuthorsPage extends Component {
 		// console.log(`authors list from books page: ${this.props.authors}`);
 		return (
 			<div className="authors-page">
-				<AuthorsList />
+				<AuthorsList
+					authors={this.props.authors} />
 			</div>
 		);
 	}
