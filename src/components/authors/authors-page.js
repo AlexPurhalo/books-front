@@ -15,6 +15,7 @@ class AuthorsPage extends Component {
 	}
 
 	render() {
+		// console.log(`authors list from books page: ${this.props.authors}`);
 		return (
 			<div className="authors-page">
 				<AuthorsList />
@@ -23,4 +24,10 @@ class AuthorsPage extends Component {
 	}
 }
 
-export default connect(null, { fetchAuthors })(AuthorsPage);
+// Mapping states to props
+function mapStateToProps(state) {
+	return { authors: state.authors.authorsList }
+}
+
+// Export to routes
+export default connect(mapStateToProps, { fetchAuthors })(AuthorsPage);
