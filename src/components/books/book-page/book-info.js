@@ -6,20 +6,27 @@ export default class BookInfo extends Component {
 	renderBookInfo(book) {
 		return (
 			<div className="book-info">
-				<h1 className="book-title">{book.title}</h1>
 				<div className="row">
 					<div className="col-md-4">
 						<img className='book-cover' src={book.cover} alt="book" height="372" width="283px"/>
 					</div>
 					<div className="col-md-7">
+						<div className="row">
+							<div className="col-md-6">
+								<h1 className="book-title">{book.title}</h1>
+							</div>
+							<div className="col-md-6">
+								<ul className="book-authors">
+									{book.authors.map(author =>
+										<li className='book-author' key={author.id}><h3 className="book-author-name">{author.name}</h3></li>
+									)}
+								</ul>
+							</div>
+						</div>
 						<p className="book-brief">{book.brief}</p>
+						<p className="genre">genre: {book.genre}</p>
 					</div>
 				</div>
-				<ul className="book-authors">
-					{book.authors.map(author =>
-						<li key={author.id}><h3>{author.name}</h3></li>
-					)}
-				</ul>
 			</div>
 		);
 	}
