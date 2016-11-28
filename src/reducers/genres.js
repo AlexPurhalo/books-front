@@ -8,7 +8,7 @@ const INITIAL_STATE = { genresList: null };
 export default function(state = INITIAL_STATE, action) {
 	switch(action.type) {
 		case FETCH_GENRES_SUCCESS:
-			console.log(`genres list from reducer: ${action.payload}`);
+			// console.log(`genres list from reducer: ${action.payload}`);
 			return { ...state, genresList: action.payload };
 		default:
 			return state;

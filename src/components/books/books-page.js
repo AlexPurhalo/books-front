@@ -19,9 +19,10 @@ class BooksPage extends Component {
 
 	render() {
 		// console.log(`books list from BooksPage component: ${this.props.booksList}`);
+		// console.log(`genres list from parent component: ${this.props.genresList}`);
 		return (
 			<div className="books-page">
-				<GenresList />
+				<GenresList genres={this.props.genresList} />
 				<BooksList books={this.props.booksList} />
 			</div>
 		);
@@ -29,7 +30,11 @@ class BooksPage extends Component {
 }
 
 function mapStateToProps(state) {
-	return { booksList: state.books.booksList }
+	return {
+		booksList: state.books.booksList,
+		genresList: state.genres.genresList
+	}
 }
 
 export default connect(mapStateToProps, { fetchBooks, fetchGenres })(BooksPage);
+
