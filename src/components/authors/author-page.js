@@ -13,13 +13,21 @@ class AuthorPage extends Component {
 	componentWillMount() {
 		this.props.fetchAuthor(this.props.params.id)
 	}
+
 	render() {
+		// console.log(`author info from component: ${this.props.author}`);
 		return (
 			<div className="author-page">
-				<AuthorInfo />
+				<AuthorInfo author={this.props.author}/>
 			</div>
 		);
 	}
 }
 
-export default connect(null, { fetchAuthor })(AuthorPage);
+// Maps states to props
+function mapStateToProps(state) {
+	return { author: state.authors.authorInfo }
+}
+
+// Exports component to routes
+export default connect(mapStateToProps, { fetchAuthor })(AuthorPage);

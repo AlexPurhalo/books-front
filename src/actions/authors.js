@@ -47,7 +47,7 @@ export function fetchAuthor(id) {
 }
 
 function fetchAuthorSuccess(data) {
-	console.log(`author from action: ${data}`);
+	// console.log(`author from action: ${data}`);
 	return {
 		type: FETCH_AUTHOR_SUCCESS,
 		payload: data
