@@ -11,6 +11,7 @@ class BookPage extends Component {
 	}
 
 	render() {
+		console.log(`book from component: ${this.props.book}`);
 		return (
 			<div className="book-page">
 				Book Page
@@ -19,4 +20,8 @@ class BookPage extends Component {
 	}
 }
 
-export default connect(null, { fetchBook })(BookPage);
+function mapStateToProps(state) {
+	return { book: state.books.singleBook };
+}
+
+export default connect(mapStateToProps, { fetchBook })(BookPage);

@@ -42,7 +42,7 @@ export function fetchBook(id) {
 }
 
 function  fetchBookSuccess(data) {
-	console.log(`book info: ${data}`);
+	// console.log(`book info from action: ${data}`);
 	return {
 		type: FETCH_BOOK_SUCCESS,
 		payload: data
