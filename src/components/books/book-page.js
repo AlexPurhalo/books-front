@@ -4,6 +4,10 @@ import { connect } from 'react-redux';
 
 // Actions import
 import { fetchBook } from '../../actions/books'
+
+// Components import
+import BookInfo from './book-page/book-info';
+
 // Shows page of book
 class BookPage extends Component {
 	componentWillMount() {
@@ -11,10 +15,10 @@ class BookPage extends Component {
 	}
 
 	render() {
-		console.log(`book from component: ${this.props.book}`);
+		// console.log(`book from component: ${this.props.book}`);
 		return (
 			<div className="book-page">
-				Book Page
+				<BookInfo book={this.props.book} />
 			</div>
 		);
 	}
